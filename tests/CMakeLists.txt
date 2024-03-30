@@ -14,9 +14,6 @@ include_directories(${gmock_SOURCE_DIR}/include ${gmock_SOURCE_DIR})
 
 add_executable(TPTests
         HertaTest.cpp
-        ../include/Mensajes.hpp
-        ../src/Mensajes.cpp
-        ../src/Mensajes.cpp
 )
 
 target_link_libraries(
