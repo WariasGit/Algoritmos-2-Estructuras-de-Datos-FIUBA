@@ -1,7 +1,7 @@
 #include "Herta.hpp"
 #include <iostream>
 
-Herta::Herta() : contador_respuestas(0) {}
+
 
 int Herta::generar_numero_aleatorio(int min, int max) {
     std::random_device rd;

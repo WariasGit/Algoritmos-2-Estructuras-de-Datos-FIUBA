@@ -1,15 +1,14 @@
 #ifndef TP1_1C2024_HERTA_HPP
 #define TP1_1C2024_HERTA_HPP
-#include <iostream>
+
 #include <string>
 #include <random>
 
 class Herta{
 public:
-    Herta();
     void responder(std::string mensaje);
 private:
-    int contador_respuestas;
+    int contador_respuestas =0;
     int max_respuestas =5;
     const std::string RespuestaAutomatica = "Hola. En este momento no estoy disponible y no me pondré en contacto contigo más tarde.";
     const std::string KURU = "kuru";

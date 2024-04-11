@@ -15,7 +15,7 @@ bool es_opcion_valida(int opcion){
 
 int main() {
     int opcion;
-    Herta Herta;
+    Herta Chat;
     do{
         std::cout << "Bienvenido! ¿que desea hacer?" << std::endl;
         mostrar_menu();
@@ -30,7 +30,7 @@ int main() {
             std::string consulta;
             std::cout << "Ingrese su consulta:  ";
             std::getline(std::cin, consulta);
-            Herta.responder(consulta);
+            Chat.responder(consulta);
         }
     }while(opcion != SALIR);
     std::cout << "Adiós!" << std::endl;
