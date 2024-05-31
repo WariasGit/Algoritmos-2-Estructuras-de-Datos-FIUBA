@@ -24,13 +24,13 @@ bool Herta::contiene_clave_kuru(std::string mensaje) {
 
 void Herta::responder_kuru(int numero_aleatorio) {
     if(numero_aleatorio==1){
-        std::cout << RespuestaKuru1 << std::endl;
+        std::cout << RESPUESTAS_KURU1 << std::endl;
     }
     else if(numero_aleatorio==2){
-        std::cout << RespuestaKuru2 << std::endl;
+        std::cout << RESPUESTAS_KURU2 << std::endl;
     }
     else{
-        std::cout << RespuestaKuru3 << std::endl;
+        std::cout << RESPUESTAS_KURU3 << std::endl;
     }
 }
 
@@ -39,7 +39,7 @@ bool Herta::contiene_clave_hola(std::string mensaje) {
 }
 
 void Herta::responder_hola() {
-    std::cout << RespuestaHola << std::endl;
+    std::cout << RESPUESTA_HOLA << std::endl;
 }
 
 bool Herta::contiene_clave_problema(std::string mensaje) {
@@ -47,7 +47,7 @@ bool Herta::contiene_clave_problema(std::string mensaje) {
 }
 
 void Herta::responder_problema() {
-    std::cout << RespuestaProblema << std::endl;
+    std::cout << RESPUESTA_PROBLEMA << std::endl;
 }
 
 bool Herta::contiene_clave_preocupado(std::string mensaje) {
@@ -55,7 +55,7 @@ bool Herta::contiene_clave_preocupado(std::string mensaje) {
 }
 
 void Herta::responder_preocupado() {
-    std::cout << RespuestaPreocupado << std::endl;
+    std::cout << RESPUESTA_PREOCUPADO << std::endl;
 }
 
 bool Herta::contiene_clave_simulado(std::string mensaje) {
@@ -63,44 +63,82 @@ bool Herta::contiene_clave_simulado(std::string mensaje) {
 }
 
 void Herta::responder_simulado() {
-    std::cout << RespuestaSimulado << std::endl;
+    std::cout << RESPUESTA_SIMULADO << std::endl;
 }
 
 bool Herta::contiene_clave_quien_eres(std::string mensaje) {
-    return mensaje.find(QuienSoy) != std::string::npos;
+    size_t pos = mensaje.find(ERES_HERTA);
+    if (pos != std::string::npos) {
+        size_t next_pos = pos + ERES_HERTA.length();
+        if (next_pos == mensaje.length() || std::isspace(mensaje[next_pos]) || mensaje[next_pos] == '\n') {
+            return true;
+        }
+    }
+    return false;
 }
 
 void Herta::responder_quien_eres() {
-    std::cout << RespuestaQuienSoy << std::endl;
+    std::cout <<RESPUESTA_ERES_HERTA<< std::endl;
 }
 
 bool Herta::contiene_clave_marioneta(std::string mensaje) {
-    return mensaje.find(LaMarioneta) != std::string::npos;
+    size_t pos = mensaje.find(MARIONETA);
+    if (pos != std::string::npos) {
+        size_t next_pos = pos + MARIONETA.length();
+        if (next_pos == mensaje.length() || std::isspace(mensaje[next_pos]) || mensaje[next_pos] == '\n') {
+            return true;
+        }
+    }
+    return false;
 }
 
 void Herta::responder_marioneta() {
-    std::cout << RespuestaMarioneta << std::endl;
+    std::cout << RESPUESTA_MARIONETA << std::endl;
 }
 
 void Herta::respuesta_desentendida(int numero_aleatorio){
     if(numero_aleatorio==1){
-        std::cout << RespuestaDesentendida1 << std::endl;
+        std::cout << RESPUESTAS_INDETERMINADO1 << std::endl;
     }
     else if(numero_aleatorio==2){
-        std::cout << RespuestaDesentendida2 << std::endl;
+        std::cout << RESPUESTAS_INDETERMINADO2 << std::endl;
     }
 }
 
 
-
+Herta::Herta(){
+    contador_respuestas = 0; 
+    max_respuestas = 5; 
+    RESPUESTA_AUTOMATICA = "[Respuesta automatica] Hola. En este momento no estoy disponible, y no me pondre en contacto contigo mas tarde.";
+    KURU = "kuru";
+    KURURIN = "kururin";
+    RESPUESTAS_KURU1 = "KURU";
+    RESPUESTAS_KURU2 = "KURU KURU";
+    RESPUESTAS_KURU3 = "KURURIN";
+    HOLA = "hola";
+    RESPUESTA_HOLA = "Hola.";
+    PROBLEMA = "problema";
+    RESPUESTA_PROBLEMA = "No te preocupes. Ya esta solucionado.";
+    PREOCUPADO = "preocupado";
+    PREOCUPADA = "preocupada";
+    RESPUESTA_PREOCUPADO = "De que te preocupas si yo estoy aqui?";
+    SIMULADO = "simulado";
+    RESPUESTA_SIMULADO = "La actualizacion del Universo Simulado ya esta lista, ven a probarla.";
+    ERES_HERTA = "eres herta?";
+    RESPUESTA_ERES_HERTA = "Quieres una selfie para demostrartelo o que?";
+    MARIONETA = "y tu marioneta?";
+    RESPUESTA_MARIONETA = "Vaya, parece que la perdi. No me extrania que no la encuentre.";
+    RESPUESTAS_INDETERMINADO1 = "Oh.";
+    RESPUESTAS_INDETERMINADO2 = "...";
+}
 
 /*
- * Precondiciones: Recibe una cadena de caracteres ingresada por el usuario, convertida a minuscula.
+ * Precondiciones: Recibe una cadena de caracteres ingresada por el usuario.
  * Postcondiciones: Evalua el mensaje y responde segun corresponda.
  */
 void Herta::responder(std::string mensaje) {
     if (contador_respuestas == 0){
-        std::cout<<RespuestaAutomatica<<std::endl;
+        std::cout<<RESPUESTA_AUTOMATICA<<std::endl;
     }
     else{
         std::string mensaje_minuscula = convertir_a_minuscula(mensaje);
@@ -130,7 +168,6 @@ void Herta::responder(std::string mensaje) {
             int numero_aleatorio = generar_numero_aleatorio(1,2);
             respuesta_desentendida(numero_aleatorio);
         }
-
     }
     ++contador_respuestas;
 

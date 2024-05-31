@@ -17,7 +17,7 @@ int main() {
     int opcion;
     Herta Chat;
     do{
-        std::cout << "Bienvenido! ¿que desea hacer?" << std::endl;
+        std::cout << "Que desea hacer?" << std::endl;
         mostrar_menu();
         std::cin >> opcion;
         while(!es_opcion_valida(opcion)){
