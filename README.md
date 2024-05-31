@@ -7,7 +7,6 @@ ARIAS WALTER FEDERICO, 43806501, 106428.
    <img src="Banner.jpg" alt="TP1: Los mensajes de Herta"><br>
 </p>
 
-### ARIAS WALTER FEDERICO - 106428
 El proyecto se puede compilar manualmente por terminal con la siguiente línea:
 
 > // COMPLETAR CON LINEA DE COMPILACIÓN //
