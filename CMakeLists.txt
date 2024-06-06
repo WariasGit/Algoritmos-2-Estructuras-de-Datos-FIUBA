@@ -10,7 +10,9 @@ include_directories(include)
 
 # Si crean otros archivos .cpp, los tienen que agregar acá de la forma:
 #   "directorio/archivo.cpp"
-set(ARCHIVOS_FUENTE "src/Herta.cpp")
+set(ARCHIVOS_FUENTE "src/Herta.cpp"
+        "include/Herta.hpp"
+)
 
 add_executable(AyED_TP1_1c2024
         ${ARCHIVOS_FUENTE}

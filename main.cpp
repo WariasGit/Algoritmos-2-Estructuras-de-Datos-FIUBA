@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "Herta.hpp"
+#include "include/Herta.hpp"
 
 const int CONSULTAR = 1;
 const int SALIR = 2;
