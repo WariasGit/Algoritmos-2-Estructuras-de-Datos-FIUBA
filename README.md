@@ -6,7 +6,7 @@ ARIAS WALTER FEDERICO
    <img src="Banner.jpg" alt="TP1: Los mensajes de Herta"><br>
 </p>
 
-El proyecto se puede compilar utilizando el archivo **CMakeLists.txt** presente en el directorio raíz.
+El proyecto se puede compilar con CMake utilizando el archivo **CMakeLists.txt** presente en el directorio raíz.
 
 Para distribuciones de Linux, se pueden utilizar los scripts presentes en el directorio raíz para compilar y ejecutar
 la suite de tests. Requiere:
